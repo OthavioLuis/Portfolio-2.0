@@ -14,9 +14,9 @@ export default function ContactSection({ id }: SectionProps) {
                 Mande um E-mail
                 </a>
                 <div className="flex justify-center space-x-6 mt-10">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold">GitHub</a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold">LinkedIn</a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold">Dribbble</a>
+                <a href="https://github.com/OthavioLuis" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold">GitHub</a>
+                <a href="https://www.linkedin.com/in/othavio-luis-rodrigues-752732221" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold">LinkedIn</a>
+                <a href="https://dribbble.com/othavio_front" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm font-semibold">Dribbble</a>
                 </div>
             </div>
         </section>

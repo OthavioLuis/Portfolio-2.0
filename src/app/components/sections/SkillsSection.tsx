@@ -12,7 +12,7 @@ const skillCategories = [
     },
     {
         title: 'Design',
-        skills: ['Figma', 'UI/UX Principles', 'Design Responsivo', 'Prototipagem']
+        skills: ['Figma', 'UX Principles', 'Design Responsivo', 'Prototipagem']
     }
 ]
 
