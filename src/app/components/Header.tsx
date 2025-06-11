@@ -43,13 +43,15 @@ export default function Header({ activeSection }: HeaderProps) {
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex justify-between items-center h-16">
                         <Link href="#hero">
-                            <Image
-                                src={currentLogo}
-                                alt='Logo escrito Othavio com crase em volta e o ultimo "O" com a cor vinho'
-                                width={120}
-                                className=" object-contain"
-                                priority
-                            />
+                            {mounted && (
+                                <Image
+                                    src={currentLogo}
+                                    alt='Logo escrito Othavio com crase em volta e o ultimo "O" com a cor vinho'
+                                    width={120}
+                                    className=" object-contain"
+                                    priority
+                                />
+                            )}
                         </Link>
                         <div className="hidden md:flex items-center gap-4">
                             <nav className="flex space-x-8 text-muted-foreground">
