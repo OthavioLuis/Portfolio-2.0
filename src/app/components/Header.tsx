@@ -2,10 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../../public/logo-portfolio.svg'
 import { ThemeToggle } from './ThemeToggle';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+
+import logoLight from '../../../public/logo.svg';
+import logoDark from '../../../public/logo-dark.svg';
+import { useTheme } from 'next-themes';
 
 interface HeaderProps {
     activeSection: string;
@@ -21,22 +24,30 @@ const navLinks = [
 export default function Header({ activeSection }: HeaderProps) {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
+    const { theme } = useTheme()
+
+    useEffect(() => {
+        setMounted(true)
+    })
 
     const handleLinkClick = () => {
         setIsMenuOpen(false)
     }
+
+    const currentLogo = theme === 'dark' ? logoDark : logoLight
 
     return (
         <>
             <header id="navbar" className="bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-40 shadow-sm border-b border-border">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex justify-between items-center h-16">
-                        <Link href="#hero" className="text-xl font-bold text-primary">
+                        <Link href="#hero">
                             <Image
-                                src={logo}
+                                src={currentLogo}
                                 alt='Logo escrito Othavio com crase em volta e o ultimo "O" com a cor vinho'
                                 width={120}
-                                className=" object-cover"
+                                className=" object-contain"
                                 priority
                             />
                         </Link>
@@ -56,9 +67,9 @@ export default function Header({ activeSection }: HeaderProps) {
                         </div>
 
                         {/* Botão Hambúrguer para Mobile */}
-                        <div className="md:hidden">
+                        <div className="md:hidden flex items-center">
                             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                                <Menu className="h-6 w-6" />
+                                <Menu className="h-8 w-8" />
                                 <span className="sr-only">Abrir menu</span>
                             </button>
                         </div>
@@ -72,7 +83,7 @@ export default function Header({ activeSection }: HeaderProps) {
             >
                 <div className="flex justify-end p-4">
                     <button onClick={() => setIsMenuOpen(false)}>
-                        <X className="h-7 w-7" />
+                        <X className="h-8 w-8" />
                         <span className="sr-only">Fechar menu</span>
                     </button>
                 </div>
