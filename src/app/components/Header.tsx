@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../../public/logo-portfolio.svg'
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
     activeSection: string;
@@ -41,6 +42,7 @@ export default function Header({ activeSection}: HeaderProps) {
                     </a>
                     ))}
                 </nav>
+                <ThemeToggle />
                 <div className="md:hidden">
                     {/* Botão para menu mobile pode ser implementado aqui */}
                 </div>
