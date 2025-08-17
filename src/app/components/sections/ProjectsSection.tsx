@@ -12,9 +12,16 @@ const projects = [
         demoUrl: 'https://editor-theta-jet.vercel.app',
         codeUrl: 'https://github.com/OthavioLuis/Text-Editor'
     },
-        {
+    {
+        title: 'Previsão do Tempo',
+        description: 'Website com API da OpenWeather. Desenvolvida com TypeScript, Tailwind e Next.js 14.',
+        imageUrl: 'https://raw.githubusercontent.com/unibaixada/img-port/refs/heads/main/previsao-tempo.png',
+        demoUrl: 'https://tempo-zeta-brown.vercel.app/',
+        codeUrl: 'https://github.com/OthavioLuis/previsao-do-tempo'
+    },
+    {
         title: 'Calculadora de CDI',
-        description: 'Aplicação web com API do Banco Central. Desenvolvida com Next.js 14 (App Router), TypeScript e Tailwind',
+        description: 'Aplicação web com API do Banco Central. Desenvolvida com Next.js 14 (App Router), TypeScript e Tailwind.',
         imageUrl: 'https://raw.githubusercontent.com/unibaixada/img-port/refs/heads/main/image.png',
         demoUrl: 'https://cdi-gules.vercel.app/',
         codeUrl: 'https://github.com/OthavioLuis/calculadora-CDI'
