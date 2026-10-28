@@ -6,6 +6,30 @@ interface SectionProps {
 
 const projects = [
     {
+        title: 'E-commerce de Semijoias',
+        description: 'Plataforma de e-commerce e painel administrativo desenvolvidos sob medida, com integração de APIs de frete e pagamento online.',
+        imageUrl: 'https://raw.githubusercontent.com/unibaixada/img-port/refs/heads/main/lumas.png',
+        demoUrl: '',
+        codeUrl: '',
+        badge: 'Projeto Comercial'
+    },
+    {
+        title: 'Gestão Automotiva',
+        description: 'Sistema web full-stack para gestão de oficina. Inclui controle de clientes, veículos, estoque, cálculo de comissões e geração de recibos em PDF.',
+        imageUrl: 'https://raw.githubusercontent.com/unibaixada/img-port/refs/heads/main/bahiacar.png',
+        demoUrl: '',
+        codeUrl: '',
+        badge: 'Sistema Interno'
+    },
+    {
+        title: 'Siglário - HRJR',
+        description: 'Sistema corporativo para gestão de siglas médicas. Desenvolvi um painel administrativo (CRUD) para os coordenadores do hospital, com validação lógica para prevenir cadastros duplicados.',
+        imageUrl: 'https://raw.githubusercontent.com/unibaixada/img-port/refs/heads/main/siglario-hrjr.png',
+        demoUrl: '',
+        codeUrl: '',
+        badge: 'Solução Corporativa'
+    },
+    {
         title: 'Editor de Texto',
         description: 'Editor JS com toolbar de formatação (execCommand) para exercitar manipulação de documentos e estilos.',
         imageUrl: 'https://raw.githubusercontent.com/unibaixada/img-port/refs/heads/main/capa-editor-texto.png',
@@ -58,8 +82,17 @@ export default function ProjectsSection({ id }: SectionProps) {
                                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                                 <p className="text-muted-foreground mb-4">{project.description}</p>
                                 <div className="flex space-x-4">
-                                    <a href={project.demoUrl} target="_blank" className="text-primary font-semibold hover:underline">Ver Demo</a>
-                                    <a href={project.codeUrl} target="_blank" className="text-primary font-semibold hover:underline">Código</a>
+                                    {project.demoUrl && (
+                                        <a href={project.demoUrl} target="_blank" className="text-primary font-semibold hover:underline">Ver Demo</a>
+                                    )}
+                                    {project.codeUrl && (
+                                        <a href={project.codeUrl} target="_blank" className="text-primary font-semibold hover:underline">Código</a>
+                                    )}
+                                    {!project.demoUrl && !project.codeUrl && (
+                                        <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 cursor-default">
+                                            {project.badge} (Privado)
+                                        </span>
+                                    )}
                                 </div>
                             </div>
                         </div>
